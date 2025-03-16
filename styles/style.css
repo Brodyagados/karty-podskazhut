@@ -39,6 +39,13 @@ figure {
   --accent-color: transparent;
 }
 
+.content-section {
+  --inline-padding: 5vi;
+
+  padding-inline-start: var(--inline-padding);
+  padding-inline-end: var(--inline-padding);
+}
+
 .header {
   padding-block-start: 10vi;
 }
@@ -61,9 +68,14 @@ figure {
   margin-block-end: 2.5vi;
 }
 
-.content-section {
-  --inline-padding: 5vi;
+.content__text-block {
+  font-size: 18px;
+}
 
-  padding-inline-start: var(--inline-padding);
-  padding-inline-end: var(--inline-padding);
+.content__text-block > .content__paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+
+.content__paragraph > a {
+  color: inherit;
 }
