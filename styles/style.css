@@ -4,9 +4,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-font: Raleway, sans-serif;
+  --accent-font: 'STIX Two Text', serif;
+}
+
 .page {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+
   min-inline-size: 360px;
   margin: 0;
+  background-color: var(--bg-color, #F3EFEC);
+  color: var(--text-color, #312A4E);
+  font-family: var(--main-font, sans-serif);
+}
+
+.page.theme_dark {
+  --bg-color: #171717;
+  --text-color: #B3B3B3;
+  --accent-color: transparent;
 }
 
 p,
