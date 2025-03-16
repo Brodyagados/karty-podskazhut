@@ -39,11 +39,26 @@ figure {
   --accent-color: transparent;
 }
 
+.header {
+  padding-block-start: 10vi;
+}
+
 .heading {
   font-family: var(--accent-font);
   font-weight: 600;
   line-height: 0.9;
   text-align: center;
+}
+
+.header-title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-block-end: 40px;
+}
+
+.content__title {
+  font-size: 30px;
+  margin-block-start: 7vi;
+  margin-block-end: 2.5vi;
 }
 
 .content-section {
