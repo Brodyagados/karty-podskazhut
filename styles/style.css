@@ -52,13 +52,6 @@ button:disabled {
   font-family: var(--main-font, sans-serif);
 }
 
-.page.theme_dark {
-  --bg-color: #171717;
-  --text-color: #b3b3b3;
-  --accent-color: transparent;
-  --list-marker: url(/images/marker-dark.svg);
-}
-
 /*#endregion */
 
 /*#region Заголовок */
@@ -294,6 +287,31 @@ button:disabled {
   font-size: 18px;
   line-height: 1;
   text-transform: uppercase;
+}
+
+/*#endregion */
+
+/*#region Темная тема */
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
+  --list-marker: url(/images/marker-dark.svg);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(/images/pattern.svg);
+}
+
+.theme_dark
+  .content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
+  border: thin solid currentColor;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(/images/pattern.svg);
 }
 
 /*#endregion */
