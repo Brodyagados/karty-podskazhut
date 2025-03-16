@@ -43,7 +43,7 @@ button:disabled {
   --bg-color: #f3efec;
   --text-color: #312a4e;
   --accent-color: #ffab6b;
-  --list-marker: url(/images/marker-light.svg);
+  --list-marker: url(../images/marker-light.svg);
 
   min-inline-size: 360px;
   margin: 0;
@@ -267,7 +267,7 @@ button:disabled {
   font-size: 18px;
   line-height: 1;
   text-align: center;
-  border-bottom: thin solid var(--text-color);
+  border-bottom: thin solid currentColor;
 }
 
 /*#endregion */
@@ -297,11 +297,11 @@ button:disabled {
   --bg-color: #171717;
   --text-color: #b3b3b3;
   --accent-color: transparent;
-  --list-marker: url(/images/marker-dark.svg);
+  --list-marker: url(../images/marker-dark.svg);
 }
 
 .theme_dark .header__theme-button_is-active::after {
-  background-image: url(/images/pattern.svg);
+  background-image: url(../images/pattern.svg);
 }
 
 .theme_dark
@@ -311,7 +311,7 @@ button:disabled {
 }
 
 .theme_dark .colored-text::after {
-  background-image: url(/images/pattern.svg);
+  background-image: url(../images/pattern.svg);
 }
 
 /*#endregion */
