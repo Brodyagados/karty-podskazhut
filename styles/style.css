@@ -257,25 +257,6 @@ button:disabled {
 
 /*#region Изображение */
 
-/*#region Подвал */
-
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-block-start: 10%;
-  padding: 2.5%;
-  border-top: thin solid currentColor;
-}
-
-.footer__copyright {
-  font-size: 18px;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-/*#endregion */
-
 .content__figure {
   position: relative;
   inline-size: calc(100% + 2 * var(--horizontal-indent));
@@ -294,6 +275,25 @@ button:disabled {
   line-height: 1;
   text-align: center;
   border-bottom: thin solid var(--text-color);
+}
+
+/*#endregion */
+
+/*#region Подвал */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 10%;
+  padding: 2.5%;
+  border-top: thin solid currentColor;
+}
+
+.footer__copyright {
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 /*#endregion */
