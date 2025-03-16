@@ -8,7 +8,7 @@
   --main-font: 'Raleway', sans-serif;
   --accent-font: 'STIX Two Text', serif;
   --horizontal-indent: 5vi;
-  --vertical-content-indent: 7vi;
+  --vertical-content-indent: 7%;
 }
 
 p,
@@ -68,7 +68,7 @@ button:disabled {
 /*#region Шапка */
 
 .header {
-  padding-block-start: 10vi;
+  padding-block-start: 10%;
 }
 
 .header-title {
@@ -135,7 +135,7 @@ button:disabled {
 .content__title {
   font-size: 30px;
   margin-block-start: var(--vertical-content-indent);
-  margin-block-end: 2.5vi;
+  margin-block-end: 2.5%;
 }
 
 /*#region Блок с текстом */
