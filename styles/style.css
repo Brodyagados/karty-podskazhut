@@ -77,9 +77,22 @@ figure {
   margin-block-end: 2.5vi;
 }
 
+/*#region Блок с текстом */
+
 .content__text-block {
   font-size: 18px;
 }
+
+.content__text-block_type_first-lettered > .content__paragraph:first-child::first-letter {
+  display: inline-block;
+  padding-inline: 4px;
+  margin-inline-end: 1px;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: var(--accent-color);
+}
+
+/*#endregion */
 
 /*#region Абзацы и цитата */
 
