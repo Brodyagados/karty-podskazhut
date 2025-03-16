@@ -97,6 +97,7 @@ button:disabled {
 
 .header__theme-button {
   position: relative;
+  padding: 0;
   font-family: inherit;
   font-size: 18px;
   line-height: 1.04;
