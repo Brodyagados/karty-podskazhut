@@ -23,6 +23,20 @@ figure {
   margin: 0;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: thin solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
 /*#region Страница */
 
 .page {
