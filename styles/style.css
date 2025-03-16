@@ -47,11 +47,7 @@ figure {
 
 /*#endregion */
 
-/*#region Шапка */
-
-.header {
-  padding-block-start: 10vi;
-}
+/*#region Заголовок */
 
 .heading {
   font-family: var(--accent-font);
@@ -60,10 +56,66 @@ figure {
   text-align: center;
 }
 
+/*#endregion */
+
+/*#region Шапка */
+
+.header {
+  padding-block-start: 10vi;
+}
+
 .header-title {
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
   margin-block-end: 40px;
 }
+
+/*#region Меню */
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  inline-size: 100%;
+  padding: 20px var(--horizontal-indent);
+  border-block: thin solid currentColor;
+}
+
+.header__theme-toggler {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.header__theme-button {
+  position: relative;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.04;
+  color: currentColor;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  inline-size: calc(100% + 0.5ch);
+  block-size: 0.4em;
+  bottom: 3px;
+  right: -0.25ch;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/*#endregion */
 
 /*#endregion */
 
