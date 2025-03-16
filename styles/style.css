@@ -91,7 +91,8 @@ button:disabled {
   display: flex;
   justify-content: end;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
+  padding: 0;
   list-style: none;
 }
 
