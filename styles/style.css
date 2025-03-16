@@ -40,10 +40,7 @@ figure {
 }
 
 .content-section {
-  --inline-padding: 5vi;
-
-  padding-inline-start: var(--inline-padding);
-  padding-inline-end: var(--inline-padding);
+  padding-inline: 5vi;
 }
 
 .header {
@@ -72,10 +69,18 @@ figure {
   font-size: 18px;
 }
 
-.content__text-block > .content__paragraph:not(:last-of-type) {
+.content__text-block > .content__paragraph:not(:last-of-type),
+.content__text-block > .content__blockquote {
   margin-block-end: 1.5em;
 }
 
 .content__paragraph > a {
   color: inherit;
+}
+
+.content__blockquote {
+  inline-size: 75%;
+  margin-inline: auto;
+  font-style: italic;
+  line-height: 2;
 }
