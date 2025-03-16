@@ -25,6 +25,7 @@ figure {
   --bg-color: #F3EFEC;
   --text-color: #312A4E;
   --accent-color: #FFAB6B;
+  --list-marker: url(/images/marker-light.svg);
 
   min-inline-size: 360px;
   margin: 0;
@@ -37,6 +38,7 @@ figure {
   --bg-color: #171717;
   --text-color: #B3B3B3;
   --accent-color: transparent;
+  --list-marker: url(/images/marker-dark.svg);
 }
 
 .content-section {
@@ -83,4 +85,31 @@ figure {
   margin-inline: auto;
   font-style: italic;
   line-height: 2;
+}
+
+.content__list {
+  padding-inline-start: 40px; 
+  list-style-type: none;
+}
+
+.content__list > li {
+  position: relative;
+}
+
+.content__list > li::before {
+  --size: 15px;
+
+  content: '';
+  position: absolute;
+  top: calc((100% - var(--size)) / 2);
+  left: -25px;
+  background-image: var(--list-marker);
+  background-position: center;
+  background-repeat: no-repeat;
+  inline-size: var(--size);
+  block-size: var(--size);
+}
+
+.content__list > li:not(:last-of-type) {
+  margin-block-end: 10px;
 }
