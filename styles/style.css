@@ -9,6 +9,18 @@
   --accent-font: 'STIX Two Text', serif;
 }
 
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
 .page {
   --bg-color: #F3EFEC;
   --text-color: #312A4E;
@@ -27,14 +39,16 @@
   --accent-color: transparent;
 }
 
-p,
-h1,
-h2,
-h3,
-blockquote,
-ul,
-ol,
-li,
-figure {
-  margin: 0;
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.content-section {
+  --inline-padding: 5vi;
+
+  padding-inline-start: var(--inline-padding);
+  padding-inline-end: var(--inline-padding);
 }
