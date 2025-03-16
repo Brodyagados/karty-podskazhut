@@ -117,6 +117,48 @@ figure {
 
 /*#endregion */
 
+/*#region Карточка */
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: calc(4 / 3);
+  border: thin solid currentColor;
+  margin-block-start: 7%;
+}
+
+.content__card-title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.colored-text {
+  display: inline-block;
+  position: relative;
+}
+
+.colored-text::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0.15ch;
+  right: -0.25ch;
+  inline-size: calc(100% + 0.356ch);
+  block-size: 0.28em;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/*#endregion */
+
 /*#region Список */
 
 .content__list {
