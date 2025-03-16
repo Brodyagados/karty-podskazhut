@@ -7,6 +7,8 @@
 :root {
   --main-font: 'Raleway', sans-serif;
   --accent-font: 'STIX Two Text', serif;
+  --horizontal-indent: 5vi;
+  --vertical-content-indent: 7vi;
 }
 
 p,
@@ -68,12 +70,12 @@ figure {
 /*#region Контент */
 
 .content-section {
-  padding-inline: 5vi;
+  padding-inline: var(--horizontal-indent);
 }
 
 .content__title {
   font-size: 30px;
-  margin-block-start: 7vi;
+  margin-block-start: var(--vertical-content-indent);
   margin-block-end: 2.5vi;
 }
 
@@ -83,7 +85,8 @@ figure {
   font-size: 18px;
 }
 
-.content__text-block_type_first-lettered > .content__paragraph:first-child::first-letter {
+.content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
   display: inline-block;
   padding-inline: 4px;
   margin-inline-end: 1px;
@@ -141,6 +144,30 @@ figure {
 
 .content__list > li:not(:last-of-type) {
   margin-block-end: 10px;
+}
+
+/*#endregion */
+
+/*#region Изображение */
+
+.content__figure {
+  position: relative;
+  inline-size: calc(100% + 2 * var(--horizontal-indent));
+  margin-inline-start: calc(-1 * var(--horizontal-indent));
+  margin-block: var(--vertical-content-indent);
+}
+
+.content__picture {
+  inline-size: 100%;
+}
+
+.content__picture-caption {
+  inline-size: 100%;
+  padding-block: 20px;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  border-bottom: thin solid var(--text-color);
 }
 
 /*#endregion */
