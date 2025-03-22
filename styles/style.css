@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 
-.page {
-  min-inline-size: 360px;
-  margin: 0;
+:root {
+  --main-font: 'Raleway', sans-serif;
+  --accent-font: 'STIX Two Text', serif;
+  --horizontal-indent: 5vi;
+  --vertical-content-indent: 7%;
 }
 
 p,
@@ -20,3 +22,300 @@ li,
 figure {
   margin: 0;
 }
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: thin solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+/*#region Страница */
+
+.page {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --list-marker: url(../images/marker-light.svg);
+
+  min-inline-size: 360px;
+  margin: 0;
+  background-color: var(--bg-color, #f3efec);
+  color: var(--text-color, #312a4e);
+  font-family: var(--main-font, sans-serif);
+}
+
+/*#endregion */
+
+/*#region Заголовок */
+
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 0.9;
+  text-align: center;
+}
+
+/*#endregion */
+
+/*#region Шапка */
+
+.header {
+  padding-block-start: 10%;
+}
+
+.header-title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  margin-block-end: 40px;
+}
+
+/*#region Меню */
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  inline-size: 100%;
+  padding: 20px var(--horizontal-indent);
+  border-block: thin solid currentColor;
+}
+
+.header__theme-toggler {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-button {
+  position: relative;
+  padding: 0;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.04;
+  color: currentColor;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  inline-size: calc(100% + 0.5ch);
+  block-size: 0.4em;
+  bottom: 3px;
+  right: -0.25ch;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/*#endregion */
+
+/*#endregion */
+
+/*#region Контент */
+
+.content-section {
+  padding-inline: var(--horizontal-indent);
+}
+
+.content__title {
+  font-size: 30px;
+  margin-block-start: var(--vertical-content-indent);
+  margin-block-end: 2.5%;
+}
+
+/*#region Блок с текстом */
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
+  display: inline-block;
+  padding-inline: 4px;
+  margin-inline-end: 1px;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: var(--accent-color);
+}
+
+/*#endregion */
+
+/*#region Абзацы и цитата */
+
+.content__blockquote {
+  inline-size: 75%;
+  margin-inline: auto;
+  font-style: italic;
+  line-height: 2;
+}
+
+.content__text-block > .content__paragraph:not(:last-of-type),
+.content__text-block > .content__blockquote {
+  margin-block-end: 1.5em;
+}
+
+.content__paragraph > a {
+  color: inherit;
+}
+
+/*#endregion */
+
+/*#region Карточка */
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: calc(4 / 3);
+  border: thin solid currentColor;
+  margin-block-start: 7%;
+}
+
+.content__card-title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.colored-text {
+  display: inline-block;
+  position: relative;
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0.15ch;
+  right: -0.25ch;
+  inline-size: calc(100% + 0.356ch);
+  block-size: 0.28em;
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+/*#endregion */
+
+/*#region Список */
+
+.content__list {
+  padding-inline-start: 40px;
+  list-style-type: none;
+}
+
+.content__list > li {
+  position: relative;
+}
+
+.content__list > li::before {
+  --size: 15px;
+
+  content: '';
+  position: absolute;
+  top: calc((100% - var(--size)) / 2);
+  left: -25px;
+  background-image: var(--list-marker);
+  background-position: center;
+  background-repeat: no-repeat;
+  inline-size: var(--size);
+  block-size: var(--size);
+}
+
+.content__list > li:not(:last-of-type) {
+  margin-block-end: 10px;
+}
+
+/*#endregion */
+
+/*#region Изображение */
+
+.content__figure {
+  position: relative;
+  inline-size: calc(100% + 2 * var(--horizontal-indent));
+  margin-inline-start: calc(-1 * var(--horizontal-indent));
+  margin-block: var(--vertical-content-indent);
+}
+
+.content__picture {
+  inline-size: 100%;
+}
+
+.content__picture-caption {
+  inline-size: 100%;
+  padding-block: 20px;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  border-bottom: thin solid currentColor;
+}
+
+/*#endregion */
+
+/*#region Подвал */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 10%;
+  padding: 2.5%;
+  border-top: thin solid currentColor;
+}
+
+.footer__copyright {
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/*#endregion */
+
+/*#region Темная тема */
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
+  --list-marker: url(../images/marker-dark.svg);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.theme_dark
+  .content__text-block_type_first-lettered
+  > .content__paragraph:first-child::first-letter {
+  border: thin solid currentColor;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+}
+
+/*#endregion */
+
+/*#endregion */
